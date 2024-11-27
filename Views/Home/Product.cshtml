@@ -1,0 +1,175 @@
+﻿@{
+    ViewData["Title"] = "Products";
+}
+
+<h1 class="text-center my-5">Our Products</h1>
+
+<!-- Search Bar -->
+<div class="mb-4 text-center">
+    <input type="text" id="searchInput" class="form-control w-50 mx-auto" placeholder="Search products..." onkeyup="searchProducts()">
+</div>
+
+<!-- Products Grid -->
+<div class="container">
+    <div class="row" id="productsGrid">
+        <!-- Product 1 -->
+        <div class="col-md-4 mb-4 product-card">
+            <div class="card h-100">
+                <img src="/images/vintage7.jpg" class="card-img-top" alt="Vintage Tee" style="height: 450px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Vintage Japanese Tee ©2010</h5>
+                    <p class="card-text">A stylish vintage Tee perfect for all occasions.</p>
+                    <p class="text-success font-weight-bold">RM 149.99</p>
+                    <button class="btn btn-primary btn-sm">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-md-4 mb-4 product-card">
+            <div class="card h-100">
+                <img src="/images/vintage6.jpg" class="card-img-top" alt="Vintage Tee" style="height: 450px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Harley Davidson ©2002</h5>
+                    <p class="card-text">Elegant Vintage Tee to complement your professional look.</p>
+                    <p class="text-success font-weight-bold">RM 199.99</p>
+                    <button class="btn btn-primary btn-sm">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-md-4 mb-4 product-card">
+            <div class="card h-100">
+                <img src="/images/vintage5.jpg" class="card-img-top" alt="Vintage Tee" style="height: 450px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Vintage Orlando Tee</h5>
+                    <p class="card-text">Cool Retro USA Tee that are perfect for the summer.</p>
+                    <p class="text-success font-weight-bold">RM 80.00</p>
+                    <button class="btn btn-primary btn-sm">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-md-4 mb-4 product-card">
+            <div class="card h-100">
+                <img src="/images/vintage4.jpg" class="card-img-top" alt="Denim Jacket" style="height: 450px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Red Skin OX ©2008</h5>
+                    <p class="card-text">Classic OX Tee with a cool, modern twist.</p>
+                    <p class="text-success font-weight-bold">RM159.99</p>
+                    <button class="btn btn-primary btn-sm">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="col-md-4 mb-4 product-card">
+            <div class="card h-100">
+                <img src="/images/vintage3.jpg" class="card-img-top" alt="Flannel Shirt" style="height: 450px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Vintage Okhlahoma Tee ©2002</h5>
+                    <p class="card-text">Comfy Vintage Okhlahoma Tee, perfect for a casual day out.</p>
+                    <p class="text-success font-weight-bold">RM199.99</p>
+                    <button class="btn btn-primary btn-sm">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="col-md-4 mb-4 product-card">
+            <div class="card h-100">
+                <img src="/images/vintage2.jpg" class="card-img-top" alt="Knit Scarf" style="height: 450px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Grateful Dead Vintage ©90's </h5>
+                    <p class="card-text">Warm and cozy Early 90's' Tee perfect for cold weather.</p>
+                    <p class="text-success font-weight-bold">RM 50.00</p>
+                    <button class="btn btn-primary btn-sm">View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* <!-- Pagination (if needed) -->
+<div class="d-flex justify-content-center mt-4">
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+</div> *@
+
+<!-- JavaScript for Product Search -->
+<script>
+    // Search functionality for products
+    function searchProducts() {
+        var input, filter, grid, cards, card, i, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        grid = document.getElementById("productsGrid");
+        cards = grid.getElementsByClassName("product-card");
+
+        for (i = 0; i < cards.length; i++) {
+            card = cards[i];
+            txtValue = card.innerText || card.textContent;
+            card.style.display = txtValue.toUpperCase().includes(filter) ? "" : "none";
+        }
+    }
+</script>
+
+<!-- Custom Styling for the Product Page -->
+<style>
+    .product-card {
+        transition: transform 0.3s ease;
+    }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+    .pagination a {
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        margin: 0 4px;
+    }
+
+        .pagination a:hover {
+            background-color: #ddd;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+    .card-body {
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    .btn-primary {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+        .btn-primary:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+</style>
