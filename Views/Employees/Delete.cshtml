@@ -1,0 +1,119 @@
+﻿@model CBSManagementSystem.Models.Employee
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2" data-toggle="tooltip" title="Employee's Full Name">
+            @Html.DisplayNameFor(model => model.EmpName)
+        </dt>
+        <dd class="col-sm-10" data-toggle="tooltip" title="@Model.EmpName">
+            @Html.DisplayFor(model => model.EmpName)
+        </dd>
+        <dt class="col-sm-2" data-toggle="tooltip" title="Employee's Date of Birth">
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+        <dd class="col-sm-10" data-toggle="tooltip" title="@Model.DOB.ToString("yyyy-MM-dd")">
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+        <dt class="col-sm-2" data-toggle="tooltip" title="Employee's Contact Number">
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+        <dd class="col-sm-10" data-toggle="tooltip" title="@Model.PhoneNo">
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+        <dt class="col-sm-2" data-toggle="tooltip" title="Employee's Position">
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+        <dd class="col-sm-10" data-toggle="tooltip" title="@Model.Position">
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+        <dt class="col-sm-2" data-toggle="tooltip" title="Employee's Salary">
+            @Html.DisplayNameFor(model => model.EmpSalary)
+        </dt>
+        <dd class="col-sm-10" data-toggle="tooltip" title="@Model.EmpSalary.ToString("C")">
+            @Html.DisplayFor(model => model.EmpSalary)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="EmpID" />
+        <input type="submit" value="Delete" class="btn btn-danger" data-toggle="tooltip" title="Click to permanently delete this employee" /> |
+        <a asp-action="Index" class="btn btn-secondary" data-toggle="tooltip" title="Go back to the employee list">Back to List</a>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    /* Tooltips Styling */
+    .tooltip-inner {
+        max-width: 200px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .tooltip.bs-tooltip-top .arrow::before {
+        border-top-color: #ff4d4d;
+    }
+
+    .tooltip.bs-tooltip-bottom .arrow::before {
+        border-bottom-color: #ff4d4d;
+    }
+
+    .tooltip.bs-tooltip-end .arrow::before {
+        border-end-color: #ff4d4d;
+    }
+
+    .tooltip.bs-tooltip-start .arrow::before {
+        border-start-color: #ff4d4d;
+    }
+
+    /* Adjust Button Styles */
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    /* Bold the labels */
+    dt {
+        font-weight: bold;
+    }
+
+    /* Confirm Delete Message */
+    h3 {
+        color: #dc3545;
+    }
+</style>
+
+<script>
+    // Enable Bootstrap Tooltips for all elements with 'data-toggle="tooltip"'
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

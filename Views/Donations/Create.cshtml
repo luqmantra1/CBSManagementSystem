@@ -1,0 +1,108 @@
+﻿@model CBSManagementSystem.Models.Donation
+
+@{
+    ViewData["Title"] = "Create Donation";
+}
+
+<h1>Create Donation</h1>
+
+<h4>Donation Form</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <!-- Donor Name -->
+            <div class="form-group">
+                <label asp-for="DonorName" class="control-label"></label>
+                <input asp-for="DonorName" class="form-control" placeholder="Enter Donor Name" />
+                <span asp-validation-for="DonorName" class="text-danger"></span>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label asp-for="PhoneNo" class="control-label"></label>
+                <input asp-for="PhoneNo" class="form-control" placeholder="Enter Phone Number" id="phoneInput" />
+                <span asp-validation-for="PhoneNo" class="text-danger"></span>
+            </div>
+
+            <!-- Item Name -->
+            <div class="form-group">
+                <label asp-for="ItemName" class="control-label"></label>
+                <input asp-for="ItemName" class="form-control" placeholder="Enter Item Name" />
+                <span asp-validation-for="ItemName" class="text-danger"></span>
+            </div>
+
+            <!-- Item Description -->
+            <div class="form-group">
+                <label asp-for="ItemDescription" class="control-label"></label>
+                <textarea asp-for="ItemDescription" class="form-control" placeholder="Enter Item Description" rows="3"></textarea>
+                <span asp-validation-for="ItemDescription" class="text-danger"></span>
+            </div>
+
+            <!-- Price -->
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" placeholder="Enter Price" id="priceInput" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <input type="submit" value="Create Donation" class="btn btn-success btn-block" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Back to List Link -->
+<div class="text-center">
+    <a asp-action="Index" class="btn btn-secondary">Back to Donation List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        // Input masking for Phone Number and Price
+        $(document).ready(function () {
+            $('#phoneInput').mask('(000) 000-0000'); // Phone number input mask
+            $('#priceInput').mask('000,000,000.00', { reverse: true }); // Price input mask
+        });
+    </script>
+}
+
+<style>
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-control {
+        height: 40px;
+    }
+
+    .btn-block {
+        width: 100%;
+    }
+
+    .text-center {
+        margin-top: 20px;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    /* Mobile responsiveness */
+    @@media (max-width: 576px) {
+        .col-md-6 {
+            max-width: 100%;
+            padding: 0 15px;
+        }
+    }
+</style>

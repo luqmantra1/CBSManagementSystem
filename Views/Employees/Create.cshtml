@@ -1,0 +1,129 @@
+﻿@model CBSManagementSystem.Models.Employee
+
+@{
+    ViewData["Title"] = "Create Employee";
+}
+
+<h1>Create Employee</h1>
+
+<h4>Employee Details</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Employee Name Input -->
+            <div class="form-group">
+                <label asp-for="EmpName" class="control-label"></label>
+                <input asp-for="EmpName" class="form-control" placeholder="Enter Employee Name" />
+                <span asp-validation-for="EmpName" class="text-danger"></span>
+            </div>
+
+            <!-- Date of Birth Input -->
+            <div class="form-group">
+                <label asp-for="DOB" class="control-label"></label>
+                <input asp-for="DOB" type="date" class="form-control" />
+                <span asp-validation-for="DOB" class="text-danger"></span>
+            </div>
+
+            <!-- Phone Number Input -->
+            <div class="form-group">
+                <label asp-for="PhoneNo" class="control-label"></label>
+                <input asp-for="PhoneNo" type="tel" class="form-control" placeholder="Enter Phone Number" />
+                <span asp-validation-for="PhoneNo" class="text-danger"></span>
+            </div>
+
+            <!-- Position Input -->
+            <div class="form-group">
+                <label asp-for="Position" class="control-label"></label>
+                <input asp-for="Position" class="form-control" placeholder="Enter Position" />
+                <span asp-validation-for="Position" class="text-danger"></span>
+            </div>
+
+            <!-- Employee Salary Input -->
+            <div class="form-group">
+                <label asp-for="EmpSalary" class="control-label"></label>
+                <input asp-for="EmpSalary" type="number" step="0.01" class="form-control" placeholder="Enter Salary" />
+                <span asp-validation-for="EmpSalary" class="text-danger"></span>
+            </div>
+
+            <!-- Submit Button (Create) -->
+            <div class="form-group">
+                <input type="submit" value="Create Employee" class="btn btn-success btn-block" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="text-center">
+    
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    /* Center the form on the page */
+    .row {
+        margin-top: 30px;
+    }
+
+    .col-md-8 {
+        margin: 0 auto;
+    }
+
+    /* Input Fields */
+    .form-control {
+        border-radius: 8px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    /* Create Button */
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+    }
+
+    /* Back to List Button */
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+
+    /* Responsive Adjustments */
+    @@media (max-width: 576px) {
+        .col-md-8 {
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .form-control {
+            font-size: 14px;
+        }
+    }
+</style>

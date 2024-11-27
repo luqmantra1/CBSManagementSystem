@@ -1,0 +1,97 @@
+﻿@model CBSManagementSystem.Models.Donation
+
+@{
+    ViewData["Title"] = "Donation Details";
+}
+
+<h1>Donation Details</h1>
+
+<div class="donation-details">
+    <h4>Donation Information</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DonorName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DonorName)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ItemName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.ItemName)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ItemDescription)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.ItemDescription)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+</div>
+
+<!-- Action Buttons -->
+<div class="action-buttons">
+    <a asp-action="Edit" asp-route-id="@Model?.ItemID" class="btn btn-warning" data-toggle="tooltip" title="Edit this donation">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary" data-toggle="tooltip" title="Back to donation list">Back to List</a>
+</div>
+
+@section Scripts {
+    <script>
+        // Initialize tooltips for Edit and Back buttons
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+}
+
+<style>
+    .donation-details {
+        margin-bottom: 20px;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @@media (max-width: 576px) {
+        .action-buttons {
+            flex-direction: column;
+        }
+
+        .action-buttons a {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+</style>

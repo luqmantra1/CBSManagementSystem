@@ -1,0 +1,117 @@
+﻿@model CBSManagementSystem.Models.Donation
+
+@{
+    ViewData["Title"] = "Delete Donation";
+}
+
+<h1>Delete Donation</h1>
+
+<h3>Are you sure you want to delete this donation?</h3>
+
+<div class="donation-details">
+    <h4>Donation Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DonorName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DonorName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ItemName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ItemDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+</div>
+
+<!-- Confirmation buttons -->
+<div class="confirmation-buttons">
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ItemID" />
+        <button type="submit" class="btn btn-danger" id="deleteButton">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+    
+</div>
+
+@section Scripts {
+    <script>
+        // Optional: Add confirmation pop-up before submit
+        document.getElementById("deleteButton").addEventListener("click", function (event) {
+            if (!confirm("Are you sure you want to delete this donation? This action cannot be undone.")) {
+                event.preventDefault(); // Prevent form submission if user cancels
+            }
+        });
+    </script>
+}
+
+<style>
+    .donation-details {
+        margin-bottom: 20px;
+    }
+
+    .confirmation-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+        font-size: 14px;
+        padding: 8px 12px; /* Adjusted padding for smaller buttons */
+        width: auto; /* Let button size adjust based on text */
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+        font-size: 14px;
+        padding: 8px 12px; /* Adjusted padding for smaller buttons */
+        width: auto; /* Let button size adjust based on text */
+    }
+
+    .confirmation-buttons a, .confirmation-buttons button {
+        width: auto;
+        text-align: center;
+        padding: 8px 12px; /* Consistent padding */
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    /* Responsive Design */
+    @@media (max-width: 576px) {
+        .confirmation-buttons {
+            flex-direction: column;
+        }
+
+        .confirmation-buttons a, .confirmation-buttons button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+</style>

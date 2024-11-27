@@ -1,0 +1,170 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+
+<div class="about-us-container">
+    <div class="about-us-header text-center my-5">
+        <h1 class="display-4">About Us</h1>
+        <p class="lead">Learn more about our mission and team. We are passionate about delivering great products and services to you.</p>
+    </div>
+
+    <!-- Our Mission Section -->
+    <section class="about-us-mission text-center my-5">
+        <h2>Our Mission</h2>
+        <p class="lead">At Cuervos.MY, our goal is to provide high-quality, curated vintage fashion and accessories, creating a unique shopping experience for fashion enthusiasts.</p>
+    </section>
+
+    <section class="about-us-team-section text-center">
+        <h2 class="text-center my-4">Meet Our Team</h2>
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Team Member 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="team-card" data-bs-toggle="modal" data-bs-target="#teamMember1Modal">
+                        <img src="~/images/luqmantra.png" alt="Team Member 1" class="img-fluid rounded-circle mb-3">
+                        <h4>Luqmantra</h4>
+                        <p class="text-muted">Founder & CEO</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <!-- Team Member 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="team-card" data-bs-toggle="modal" data-bs-target="#teamMember2Modal">
+                        <img src="~/images/mira.png" alt="Team Member 2" class="img-fluid rounded-circle mb-3">
+                        <h4>Amirah Nur Hanis</h4>
+                        <p class="text-muted">Creative Director</p>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="team-card" data-bs-toggle="modal" data-bs-target="#teamMember3Modal">
+                        <img src="~/images/aidiel.png" alt="Team Member 3" class="img-fluid rounded-circle mb-3">
+                        <h4>Aidiel Rozamal</h4>
+                        <p class="text-muted">Marketing Specialist</p>
+                    </div>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="team-card" data-bs-toggle="modal" data-bs-target="#teamMember4Modal">
+                        <img src="~/images/hajar2.png" alt="Team Member 4" class="img-fluid rounded-circle mb-3">
+                        <h4>Hajar Mardhiah</h4>
+                        <p class="text-muted">Operations Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Member Modal Templates -->
+    <!-- Team Member 1 Modal -->
+    <div class="modal fade" id="teamMember1Modal" tabindex="-1" aria-labelledby="teamMember1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="teamMember1ModalLabel">Luqmantra - Founder & CEO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Luqmantra is the visionary behind Cuervos.MY and brings years of experience in the fashion industry.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team Member 2 Modal -->
+    <div class="modal fade" id="teamMember2Modal" tabindex="-1" aria-labelledby="teamMember2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="teamMember2ModalLabel">Amirah Nur Hanis - Creative Director</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Enis is responsible for curating our unique vintage collection and designing the shopping experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team Member 3 Modal -->
+    <div class="modal fade" id="teamMember3Modal" tabindex="-1" aria-labelledby="teamMember3ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="teamMember3ModalLabel">Aidiel Rozamal - Marketing Specialist</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Aidiel helps us reach fashion lovers through creative marketing campaigns and social media strategies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team Member 4 Modal -->
+    <div class="modal fade" id="teamMember4Modal" tabindex="-1" aria-labelledby="teamMember4ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="teamMember4ModalLabel">Hajar Mardhiah - Operations Manager</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Mardhiah ensures our operations run smoothly, from inventory management to customer satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Values Section -->
+    <section class="about-us-values-section text-center my-5">
+        <h2>Our Values</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="value-card">
+                    <i class="fas fa-heart fa-3x mb-3"></i>
+                    <h4>Passion</h4>
+                    <p>We are passionate about vintage fashion and the stories behind each piece we offer.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card">
+                    <i class="fas fa-globe fa-3x mb-3"></i>
+                    <h4>Global Reach</h4>
+                    <p>Our mission is to bring our curated collection to fashion lovers worldwide.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card">
+                    <i class="fas fa-handshake fa-3x mb-3"></i>
+                    <h4>Community</h4>
+                    <p>We believe in building a community of like-minded vintage fashion enthusiasts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Bootstrap & Custom JS for Smooth Scrolling -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Hover animation for team cards
+    const teamCards = document.querySelectorAll('.team-card');
+    teamCards.forEach(card => {
+        card.addEventListener('mouseenter', function () {
+            this.style.transform = 'scale(1.05)';
+            this.style.transition = 'transform 0.3s ease-in-out';
+        });
+        card.addEventListener('mouseleave', function () {
+            this.style.transform = 'scale(1)';
+        });
+    });
+</script>

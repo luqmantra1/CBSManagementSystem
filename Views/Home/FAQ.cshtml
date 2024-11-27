@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "FAQ - Thrifting and Vintage Tees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="faq-section">
+    <div class="container">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        <div class="faq">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    What is thrifting, and why is it popular?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Thrifting refers to shopping for pre-loved or second-hand items, often at thrift stores, flea markets, or online platforms. It's popular because it offers unique, affordable pieces and promotes sustainable fashion by reducing waste.</p>
+                </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    How can I ensure the quality of a vintage tee?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Check the fabric for signs of wear and tear, inspect stitching and seams, and look for labels or tags indicating authenticity. Pay attention to any discoloration or damage before purchasing.</p>
+                </div>
+            </div>
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    What makes a vintage tee valuable?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Factors like rarity, brand, age, condition, and unique designs or graphics contribute to the value of a vintage tee. Limited-edition prints or tees with historical significance are especially sought after.</p>
+                </div>
+            </div>
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    How should I care for vintage clothing?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Hand wash with mild detergent or use a delicate cycle on your washing machine. Avoid using bleach or harsh chemicals, and let the item air dry to preserve its quality and print.</p>
+                </div>
+            </div>
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Are thrifted items clean and safe to wear?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, most thrift stores clean items before selling. However, it's recommended to wash or dry-clean thrifted clothing yourself for added assurance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // FAQ Accordion Toggle
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('.faq-question').forEach((question) => {
+                question.addEventListener('click', function () {
+                    const faqItem = this.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+
+    </script>
+</section>
